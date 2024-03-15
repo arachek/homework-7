@@ -18,4 +18,22 @@ $url = $_SERVER["REQUEST_URI"];
 //if it is "/" return the homepage view from the main controller
 //if it is something else return a 404 view from the main controller
 
+// Remove query string from URL if present
+$url = strtok($url, '?');
+
+// Define routes
+switch ($url) {
+    case '/posts':
+        $controller = new PostController();
+        $controller->getPosts();
+        break;
+    case '/':
+        $controller = new MainController();
+        $controller->homepage();
+        break;
+    default:
+        $controller = new MainController();
+        $controller->notFound();
+        break;
+}
 ?>
