@@ -26,6 +26,8 @@ switch ($url) {
     case '/posts':
         $controller = new PostController();
         $controller->getPosts();
+        $controller = new PostController();
+        $controller->makePosts();
         break;
     case '/':
         $controller = new MainController();

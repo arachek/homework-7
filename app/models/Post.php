@@ -14,6 +14,7 @@ class Post
                 'id' => '2',
                 'name' => 'nathan'
             ]
+
         ];
     }
 }
